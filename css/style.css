@@ -1,0 +1,33 @@
+/* ==========================================================================
+   Bloomer Beauty Studio — Main Stylesheet
+   Colour palette from Coolors (coolors.co)
+   Font pairing from Google Fonts (fonts.google.com)
+   ========================================================================== */
+
+:root {
+  /* Colour palette */
+  --color-primary: #e8b4b8f5;   /* blush pink */
+  --color-secondary: #F7F1EC; /* warm cream */
+  --color-accent: #3B3B3B;    
+
+  /* Typography */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Lato', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-accent);
+  background-color: var(--color-secondary);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+}
