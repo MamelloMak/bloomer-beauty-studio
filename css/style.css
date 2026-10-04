@@ -3,9 +3,9 @@
 
 :root {
   /* my colours */
-  --color-primary: #e8b4b8f5;   /* blush pink */
-  --color-secondary: #f7f1ec;   /* warm cream */
-  --color-accent: #3b3b3b;      /* charcoal grey */
+  --colour-primary: #e8b4b8f5;   /* blush pink */
+  --colour-secondary: #f7f1ec;   /* warm cream */
+  --colour-accent: #3b3b3b;      /* charcoal grey */
 
   /* my fonts */
   --font-heading: 'Playfair Display', serif;
@@ -25,8 +25,8 @@ body {
   font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--color-accent);
-  background-color: var(--color-secondary);
+  color: var(--colour-accent);
+  background-color: var(--colour-secondary);
 }
 
 /* headings use Playfair Display so they look different from the normal text */
@@ -54,7 +54,7 @@ nav a {
   font-size: 0.95rem;
   letter-spacing: 1px;
   text-decoration: none;
-  color: var(--color-accent);
+  color: var(--colour-accent);
   padding: 8px 12px;
 }
 
@@ -133,4 +133,134 @@ footer {
   gap: 20px;
   padding-top: 40px;
   padding-bottom: 40px;
+}
+
+/* below we have colours and  */
+
+/* thin pink line under the header so it stands apart from the content */
+header {
+  border-bottom: 2px solid var(--colour-primary);
+}
+
+/* every article is a white card with rounded corners and a soft shadow */
+main section article {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* rounded corners on the pictures so they match the cards */
+main section article img {
+  border-radius: 8px;
+}
+
+/* the aside also gets the card look, with a pink line on the left */
+aside {
+  background-color: white;
+  border-left: 6px solid var(--colour-primary);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* the Book Your Appointment link in main now looks like a button */
+main a {
+  display: inline-block;
+  background-color: var(--colour-primary);
+  color: var(--colour-accent);
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* forms (enquiry and contact pages) */
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #999999;
+  border-radius: 5px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+textarea {
+  height: 120px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: var(--colour-primary);
+  color: var(--colour-accent);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* footer is dark with light text so it stands out from the page */
+footer {
+  background-color: var(--colour-accent);
+  color: var(--colour-secondary);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+footer a {
+  color: var(--colour-primary);
+}
+
+/* this keeps the social icons small */
+footer img {
+  width: 30px;
+  margin-right: 10px;
+}
+
+/* PSEUDO CLASSES: hover, focus and active */
+
+/* hover is when the mouse is on top of something */
+nav a:hover {
+  color: #b5656d;
+  text-decoration: underline;
+}
+
+main a:hover,
+button:hover {
+  background-color: var(--colour-accent);
+  color: white;
+}
+
+footer a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* focus is when you click inside a form field or tab onto a link */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #b5656d;
+  background-color: #fff7f8;
+}
+
+nav a:focus,
+main a:focus {
+  outline: 2px solid #b5656d;
+}
+
+/* active is the moment something is being clicked.
+   It sits last so it wins over hover */
+nav a:active {
+  color: #8a3f47;
+}
+
+main a:active,
+button:active {
+  background-color: #b5656d;
+  color: white;
 }
