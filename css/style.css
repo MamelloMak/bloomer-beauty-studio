@@ -94,7 +94,7 @@ header {
 }
 
 header img {
-  height: 50px;
+  height: 100px;
 }
 
 /* nav is also flexbox so the links sit in a row */
