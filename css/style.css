@@ -264,3 +264,37 @@ button:active {
   background-color: #b5656d;
   color: white;
 }
+
+/* Footer Styling */
+
+/* the three columns line up at the top and the text is centred so that it looks balanced */
+footer {
+  align-items: start;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+/* for the icons in the footer to be more visible */
+footer img {
+  width: 35px;
+  margin-right: 0;
+  filter: invert(1);
+}
+
+/* the middle column holds the social icons, so they sit side by side in the centre */
+footer section:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* a little less space under the footer text so the columns look even */
+footer p {
+  margin-bottom: 8px;
+}
+
+/* the icons get a bit bigger when the mouse is on them */
+footer a:hover img {
+  transform: scale(1.15);
+}
