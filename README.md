@@ -119,3 +119,116 @@ WebsitePlanet, 2026. AfriHost Review 2026, Good But Not For WordPress. [Online].
 
 W3Schools, 2026. W3Schools Online Web Tutorials. [online] Available at: https://www.w3schools.com [Accessed 27 August 2026].
 
+
+
+
+Part 2 
+Mamello Makhalemele
+Submission date: 05 October 2026
+
+
+CSS OVERVIEW 
+
+Fontd and Colours
+1. I used Blush pink `#e8b4b8f5` as the main colour, warm cream `#f7f1ec` as the background and charcoal grey `#3b3b3b` for text and the footer. The palette is from Coolors.
+2. For headings i used Playfair Display and for the body, Lato was used, both fonts are from Google Fonts.
+3. The colours and fonts are saved in the root in the css page.
+
+
+Default styles and typography
+
+* A reset with the universal selector sets margin and padding to 0 and `box-sizing` to `border-box`.
+* The body uses Lato at 1rem with a line height of 1.6.
+* Headings use Playfair Display in bold with a line height of 1.2 and 1px letter spacing. The sizes are h1 2.5rem, h2 1.75rem and h3 1.25rem.
+* Paragraphs, navigation links, lists and buttons each have their own font size, weight, line height or letter spacing.
+
+**Layout**
+
+* The header, main and footer have a maximum width of 1200px and are centred.
+* The header and navigation use Flexbox, so the logo, name and links sit in a row.
+* Each section in main uses Flexbox, so the articles share the space equally.
+* The footer uses Grid with three equal columns for contact details, social links and opening hours.
+
+Colour and decoration
+
+* Articles and the aside are white cards with rounded corners and a soft shadow.
+* A pink line sits under the header and on the left edge of the aside.
+* Links in the main area look like pink buttons, and the forms have borders and rounded corners.
+* The footer is dark with light text, and the social icons are turned white so they show up.
+
+**Pseudo classes**
+
+* hover: navigation links change colour and underline, buttons and main links turn charcoal, and footer links turn white.
+* focus: form fields and links get a coloured outline.
+* active: navigation links and buttons change colour while they are being clicked.
+
+## Responsive Design Overview
+
+I worked desktop first and used `max-width` media queries to change the layout for smaller screens. The breakpoints (1024px, 768px and 480px) come from my lecturer's checklist (Sookha, 2026a).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+References 
+
+Dani Krossing, 2017. How do we include CSS in our HTML. [YouTube video]. Available at: https://youtu.be/YNSnugnQYiI [Accessed 5 October 2026].
+
+Dev Dreamer, 2018. CSS Understanding the Cascade. [YouTube video]. Available at: https://youtu.be/NP8USarU6X0 [Accessed 5 October 2026].
+
+Elize UX, 2019. Is Mobile First Important. [YouTube video]. Available at: https://youtu.be/KCSvVjh1h4E [Accessed 5 October 2026].
+
+Jesse Showalter, 2020. Responsive Web Design. [YouTube video]. Available at: https://youtu.be/zF6VSky4SIc [Accessed 5 October 2026].
+
+MacGregor Hairdressing, n.d. About. [Online]. Available at: https://www.macgregor-hairdressing.co.uk/about/ [Accessed 5 October 2026].
+
+Pexels, n.d.a. Free lashes photos. [Online]. Available at: https://www.pexels.com/search/lashes/ [Accessed 5 October 2026].
+
+Pexels, n.d.b. Free braids photos. [Online]. Available at: https://www.pexels.com/search/braids/ [Accessed 5 October 2026].
+
+PickPik, n.d. Hair salons photos. [Online]. Available at: https://www.pickpik.com/search?q=hair+salons [Accessed 5 October 2026].
+
+Platform Hair Extensions, n.d. Continuing education in hair extensions. [Online]. Available at: https://platformhairextensions.com/blogs/news/continuing-education-in-hair-extensions [Accessed 5 October 2026].
+
+Sookha, J., 2026a. WEDE5020 Part 2 submission and marking checklist. [Lecturer notes shared on Microsoft Teams]. Emeris Sandton. [Accessed 1 October 2026].
+
+Sookha, J., 2026b. WEDE5020 CSS class examples: selectors, grid, fonts and media queries. [Class notes]. Emeris Sandton. [Accessed 1 October 2026].
+
+The Net Ninja, 2019. Chrome Dev Tools. [YouTube video]. Available at: https://youtu.be/25R1Jl5P7Mw [Accessed 5 October 2026].
+
+Web Dev Simplified, 2019a. Learn CSS Box Model in 8 Minutes. [YouTube video]. Available at: https://youtu.be/rIO5326FgPE [Accessed 5 October 2026].
+
+Web Dev Simplified, 2019b. Learn CSS Position in 9 Minutes. [YouTube video]. Available at: https://youtu.be/jx5jmI0UlXU [Accessed 5 October 2026].
+
