@@ -135,7 +135,7 @@ footer {
   padding-bottom: 40px;
 }
 
-/* below we have colours and  */
+/* below we have colours and decorations */
 
 /* thin pink line under the header so it stands apart from the content */
 header {
@@ -271,8 +271,8 @@ button:active {
 footer {
   align-items: start;
   text-align: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 35px;
+  padding-bottom: 35px;
 }
 
 /* for the icons in the footer to be more visible */
@@ -297,4 +297,107 @@ footer p {
 /* the icons get a bit bigger when the mouse is on them */
 footer a:hover img {
   transform: scale(1.15);
+}
+
+/* RESPONSIVE DESIGN */
+
+/* images never get wider than the space they are in, so nothing sticks out of the screen */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* small laptops and big tablets, 1024px and smaller */
+@media (max-width: 1024px) {
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.6rem; }
+
+  header, main, footer {
+    padding: 18px;
+  }
+}
+
+/* tablets, 768px and smaller */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+
+  /* the logo, name and nav stack in the middle instead of sitting in one row */
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header img {
+    height: 80px;
+  }
+
+  header nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* articles go two to a row. flex-wrap lets the third one drop to the next row */
+  main section {
+    flex-wrap: wrap;
+  }
+
+  main section article {
+    flex: 1 1 45%;
+  }
+}
+
+/* phones, 480px and smaller */
+@media (max-width: 480px) {
+  /* text is a bit smaller so it fits a small screen. I used rem so it still scales */
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.4rem; }
+  h3 { font-size: 1.1rem; }
+
+  p, li {
+    font-size: 0.95rem;
+  }
+
+  header, main, footer {
+    padding: 18px;
+  }
+
+  /* the logo is smaller on a phone so it does not push everything down */
+  header img {
+    height: 60px;
+  }
+
+  /* the nav links are stacked in one column so they are easy to tap */
+  header nav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav a {
+    display: block;
+    padding: 12px;
+  }
+
+  /* everything is one column on a phone, nothing sits side by side */
+  main section {
+    flex-direction: column;
+  }
+
+  main section article {
+    flex: none;
+    width: 100%;
+  }
+
+  /* footer goes from 3 columns to 1 */
+  footer {
+    grid-template-columns: 1fr;
+  }
+
+  /* the button is full width so it is easy to press with a thumb */
+  main a,
+  button {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
 }
