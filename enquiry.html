@@ -35,13 +35,9 @@
 
     <section>
       <article>
-        <!--
-          novalidate turns off the browser's own pop-up messages so the
-          JavaScript in js/main.js can show clearer messages instead.
-          The HTML5 attributes (required, minlength, pattern and so on) stay
-          in place as a backup. The action is only used if JavaScript is
-          switched off; with JavaScript on, the form is handled with AJAX.
-        -->
+        <!--novalidate disables the broswer's default validation messages, so JavaScript can handle 
+          the validation and display custom messages. HTML validation rules remain as a backup. AJAX submits the form without
+          refreshing the page while action handles normal form submission when JavaScript is disabled-->
         <form id="enquiry-form" action="enquiry.html" method="get" novalidate>
 
           <label for="enquiry-name">Full Name</label>
@@ -92,7 +88,7 @@
           <button type="submit" id="enquiry-submit">Send Enquiry</button>
         </form>
 
-        <!-- The response (cost and availability) is built here by js/main.js -->
+        <!-- The response for cost and availability is built here by js/main.js -->
         <div id="enquiry-result" class="form-status" role="status" aria-live="polite" tabindex="-1" hidden></div>
       </article>
     </section>
@@ -119,7 +115,7 @@
       <a href="https://www.facebook.com/bloomer"><img src="images/icons/facebookicon.png" alt="Facebook"></a>
     </section>
     <section>
-      <!-- business hours -->
+      <!-- bloomers business / working hours -->
       <p>Monday to Friday: 09:00 to 18:00</p>
       <p>Saturday: 09:00 to 14:00</p>
     </section>
