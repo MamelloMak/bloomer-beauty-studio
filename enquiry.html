@@ -35,41 +35,65 @@
 
     <section>
       <article>
-        <form>
-          <label>Full Name</label>
-          <input>
-          <label>Email Address</label>
-          <input>
-          <label>Phone Number</label>
-          <input>
-          <label>Service of Interest</label>
-          <select>
+        <!--
+          novalidate turns off the browser's own pop-up messages so the
+          JavaScript in js/main.js can show clearer messages instead.
+          The HTML5 attributes (required, minlength, pattern and so on) stay
+          in place as a backup. The action is only used if JavaScript is
+          switched off; with JavaScript on, the form is handled with AJAX.
+        -->
+        <form id="enquiry-form" action="enquiry.html" method="get" novalidate>
+
+          <label for="enquiry-name">Full Name</label>
+          <input type="text" id="enquiry-name" name="fullName" required minlength="2" maxlength="60" autocomplete="name" aria-describedby="enquiry-name-error">
+          <span class="field-error" id="enquiry-name-error" role="alert"></span>
+
+          <label for="enquiry-email">Email Address</label>
+          <input type="email" id="enquiry-email" name="email" required autocomplete="email" aria-describedby="enquiry-email-error">
+          <span class="field-error" id="enquiry-email-error" role="alert"></span>
+
+          <label for="enquiry-phone">Phone Number</label>
+          <input type="tel" id="enquiry-phone" name="phone" required placeholder="082 123 4567" pattern="(\+27|0)[0-9 \-]{9,13}" autocomplete="tel" aria-describedby="enquiry-phone-error">
+          <span class="field-error" id="enquiry-phone-error" role="alert"></span>
+
+          <label for="enquiry-service">Service of Interest</label>
+          <select id="enquiry-service" name="service" required aria-describedby="enquiry-service-error">
+            <option value="">Select a service</option>
             <optgroup label="Lashes">
-              <option>Classic Lash Set</option>
-              <option>Hybrid Lash Set</option>
-              <option>Volume Lash Set</option>
-              <option>Lash Lift &amp; Tint</option>
+              <option value="Classic Lash Set">Classic Lash Set</option>
+              <option value="Hybrid Lash Set">Hybrid Lash Set</option>
+              <option value="Volume Lash Set">Volume Lash Set</option>
+              <option value="Lash Lift &amp; Tint">Lash Lift &amp; Tint</option>
             </optgroup>
             <optgroup label="Nails">
-              <option>Classic Manicure</option>
-              <option>Gel Manicure</option>
-              <option>Gel Pedicure</option>
-              <option>Acrylic Nail Extensions</option>
-              <option>Nail Art</option>
+              <option value="Classic Manicure">Classic Manicure</option>
+              <option value="Gel Manicure">Gel Manicure</option>
+              <option value="Gel Pedicure">Gel Pedicure</option>
+              <option value="Acrylic Nail Extensions">Acrylic Nail Extensions</option>
+              <option value="Nail Art">Nail Art</option>
             </optgroup>
             <optgroup label="Hair">
-              <option>Wash, Cut &amp; Blow Dry</option>
-              <option>Full Colour</option>
-              <option>Braiding</option>
-              <option>Treatment &amp; Deep Condition</option>
+              <option value="Wash, Cut &amp; Blow Dry">Wash, Cut &amp; Blow Dry</option>
+              <option value="Full Colour">Full Colour</option>
+              <option value="Braiding">Braiding</option>
+              <option value="Treatment &amp; Deep Condition">Treatment &amp; Deep Condition</option>
             </optgroup>
           </select>
-          <label>Preferred Date</label>
-          <input>
-          <label>Message</label>
-          <textarea></textarea>
-          <button>Send Enquiry</button>
+          <span class="field-error" id="enquiry-service-error" role="alert"></span>
+
+          <label for="enquiry-date">Preferred Date</label>
+          <input type="date" id="enquiry-date" name="preferredDate" required aria-describedby="enquiry-date-error">
+          <span class="field-error" id="enquiry-date-error" role="alert"></span>
+
+          <label for="enquiry-message">Message (optional)</label>
+          <textarea id="enquiry-message" name="message" rows="5" maxlength="500" aria-describedby="enquiry-message-error"></textarea>
+          <span class="field-error" id="enquiry-message-error" role="alert"></span>
+
+          <button type="submit" id="enquiry-submit">Send Enquiry</button>
         </form>
+
+        <!-- The response (cost and availability) is built here by js/main.js -->
+        <div id="enquiry-result" class="form-status" role="status" aria-live="polite" tabindex="-1" hidden></div>
       </article>
     </section>
 
