@@ -53,16 +53,44 @@
     </section>
 
     <aside>
-      <h2>Send an Enquiry</h2>
-      <form>
-        <label>Name</label>
-        <input>
-        <label>Email</label>
-        <input>
-        <label>Message</label>
-        <textarea></textarea>
-        <button>Send</button>
+      <h2>Send Us a Message</h2>
+      <!--This form opens the user's email app with the email details filled in. 
+        POST sends the form data as plain text. novalidate allows JavaScript to show custom error 
+        messages when the user enters incorrect information.-->
+      <form id="contact-form" action="mailto:info@bloomerbeautystudio.co.za" method="post" enctype="text/plain" novalidate>
+
+        <label for="contact-name">Name</label>
+        <input type="text" id="contact-name" name="name" required minlength="2" maxlength="60" autocomplete="name" aria-describedby="contact-name-error">
+        <span class="field-error" id="contact-name-error" role="alert"></span>
+
+        <label for="contact-email">Email</label>
+        <input type="email" id="contact-email" name="email" required autocomplete="email" aria-describedby="contact-email-error">
+        <span class="field-error" id="contact-email-error" role="alert"></span>
+
+        <label for="contact-phone">Phone Number (optional)</label>
+        <input type="tel" id="contact-phone" name="phone" placeholder="082 123 4567" pattern="(\+27|0)[0-9 \-]{9,13}" autocomplete="tel" aria-describedby="contact-phone-error">
+        <span class="field-error" id="contact-phone-error" role="alert"></span>
+
+        <label for="contact-type">Type of Message</label>
+        <select id="contact-type" name="messageType" required aria-describedby="contact-type-error">
+          <option value="">Select a message type</option>
+          <option value="General question">General question</option>
+          <option value="Change or cancel a booking">Change or cancel a booking</option>
+          <option value="Feedback or compliment">Feedback or compliment</option>
+          <option value="Partnership or media">Partnership or media</option>
+          <option value="Something else">Something else</option>
+        </select>
+        <span class="field-error" id="contact-type-error" role="alert"></span>
+
+        <label for="contact-message">Message</label>
+        <textarea id="contact-message" name="message" rows="6" required minlength="10" maxlength="1000" aria-describedby="contact-message-error"></textarea>
+        <span class="field-error" id="contact-message-error" role="alert"></span>
+
+        <button type="submit" id="contact-submit">Prepare Email</button>
       </form>
+
+      <!-- The compiled email and the "open in my email app" button are built here by js/main.js -->
+      <div id="contact-result" class="form-status" role="status" aria-live="polite" tabindex="-1" hidden></div>
     </aside>
   </main>
 
