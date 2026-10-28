@@ -30,52 +30,135 @@
     <section>
       <article>
         <h2>Our Work</h2>
-        <p>Browse a selection of recent lash, nail and hair transformations, real results from real clients at our Sandton studio.</p>
+        <p>Browse a selection of recent lash, nail and hair services that we offer at our Sandton studio.</p>
       </article>
     </section>
 
-    <section>
-      <article>
-        <img src="images/gallery/lashes1.jpg" alt="Volume lash set, full glam finish">
+    <!--
+      Search and category filter. They start hidden and js/main.js shows
+      them once the page is ready, because they only work with JavaScript.
+    -->
+    <section id="gallery-controls" hidden>
+      <form role="search" aria-label="Search and filter the gallery" novalidate>
+        <label for="gallery-search">Search the gallery</label>
+        <input type="search" id="gallery-search" name="search" placeholder="For example: braids, gel or balayage" autocomplete="off">
+
+        <div role="group" aria-label="Filter by category">
+          <button type="button" class="filter-btn active" data-category="all" aria-pressed="true">All</button>
+          <button type="button" class="filter-btn" data-category="lashes" aria-pressed="false">Lashes</button>
+          <button type="button" class="filter-btn" data-category="nails" aria-pressed="false">Nails</button>
+          <button type="button" class="filter-btn" data-category="hair" aria-pressed="false">Hair</button>
+        </div>
+
+        <button type="button" id="gallery-clear">Clear filters</button>
+      </form>
+      <p id="gallery-count" role="status" aria-live="polite"></p>
+    </section>
+
+    <!--The gallery photos are in three sections, one for each category. 
+      Each photo is in an article element with a data-category attribute. The caption is in a p element.
+      The photos are links to the full-size images, which open in a new tab.-->
+    <section class="gallery-group">
+      <article data-category="lashes">
+        <a href="images/gallery/volume-lash-set-full-glam.jpg"><img src="images/gallery/volume-lash-set-full-glam.jpg" alt="Volume lash set, full glam finish" loading="lazy"></a>
         <p>Volume Lash Set, full glam finish</p>
       </article>
-      <article>
-        <img src="images/gallery/lashes2.jpg" alt="Hybrid lash set, natural but textured">
+      <article data-category="lashes">
+        <a href="images/gallery/hybrid-lash-set-natural-texture.jpg"><img src="images/gallery/hybrid-lash-set-natural-texture.jpg" alt="Hybrid lash set, natural but textured" loading="lazy"></a>
         <p>Hybrid Lash Set, natural but textured</p>
       </article>
-      <article>
-        <img src="images/gallery/lashes3.jpg" alt="Lash lift and tint, no extensions look">
+      <article data-category="lashes">
+        <a href="images/gallery/lash-lift-and-tint-natural-look.jpg"><img src="images/gallery/lash-lift-and-tint-natural-look.jpg" alt="Lash lift and tint, no extensions look" loading="lazy"></a>
         <p>Lash Lift &amp; Tint, no extensions look</p>
       </article>
+      <article data-category="lashes">
+        <a href="images/gallery/cat-eye-lash-set-with-volume.jpg"><img src="images/gallery/cat-eye-lash-set-with-volume.jpg" alt="Cateye Lash Set, with volume" loading="lazy"></a>
+        <p>Cateye Lash Set, with volume</p>
+      </article>
+      <article data-category="lashes">
+        <a href="images/gallery/classic-lash-set-fluffy-finish.jpg"><img src="images/gallery/classic-lash-set-fluffy-finish.jpg" alt="Classic Lash Set, fluffy finish" loading="lazy"></a>
+        <p>Classic Lash Set, fluffy finish</p>
+      </article>
+      <article data-category="lashes">
+        <a href="images/gallery/individual-classic-lashes-natural-look.jpg"><img src="images/gallery/individual-classic-lashes-natural-look.jpg" alt="Individual Classic Lashes, natural look" loading="lazy"></a>
+        <p>Individual Classic Lashes, natural look</p>
+      </article>
+      <article data-category="lashes">
+        <a href="images/gallery/cluster-lash-set-hybrid-finish.jpg"><img src="images/gallery/cluster-lash-set-hybrid-finish.jpg" alt="Clusters Lash Set, hybrid finish" loading="lazy"></a>
+        <p>Clusters Lash Set, hybrid finish</p>
+      </article>
     </section>
 
-    <section>
-      <article>
-        <img src="images/gallery/nails1.jpg" alt="Gel manicure, seasonal colour">
+    <section class="gallery-group">
+      <article data-category="nails">
+        <a href="images/gallery/gel-manicure-seasonal-colour.jpg"><img src="images/gallery/gel-manicure-seasonal-colour.jpg" alt="Gel manicure, seasonal colour" loading="lazy"></a>
         <p>Gel Manicure, seasonal colour</p>
       </article>
-      <article>
-        <img src="images/gallery/nails.png" alt="Nail art, hand painted detail">
+      <article data-category="nails">
+        <a href="images/gallery/nail-art-hand-painted-detail.png"><img src="images/gallery/nail-art-hand-painted-detail.png" alt="Nail art, hand painted detail" loading="lazy"></a>
         <p>Nail Art, hand painted detail</p>
       </article>
-      <article>
-        <img src="images/gallery/manicure.jpg" alt="Acrylic extensions, sculpted set">
+      <article data-category="nails">
+        <a href="images/gallery/acrylic-nail-extensions-sculpted-set.jpg"><img src="images/gallery/acrylic-nail-extensions-sculpted-set.jpg" alt="Acrylic extensions, sculpted set" loading="lazy"></a>
         <p>Acrylic Extensions, sculpted set</p>
+      </article>
+      <article data-category="nails">
+        <a href="images/gallery/gel-manicure-with-nail-art-design.jpg"><img src="images/gallery/gel-manicure-with-nail-art-design.jpg" alt="Gel Manicure with art design on natural nails" loading="lazy"></a>
+        <p>Gel Manicure with art design on natural nails</p>
+      </article>
+      <article data-category="nails">
+        <a href="images/gallery/acrylic-nail-extensions-almond-shape.jpg"><img src="images/gallery/acrylic-nail-extensions-almond-shape.jpg" alt="Acrylic Extensions, almond shape" loading="lazy"></a>
+        <p>Acrylic Extensions, almond shape</p>
+      </article>
+      <article data-category="nails">
+        <a href="images/gallery/acrylic-nail-extensions-square-shape-design.jpg"><img src="images/gallery/acrylic-nail-extensions-square-shape-design.jpg" alt="Acrylic Extensions, Square Shape with design" loading="lazy"></a>
+        <p>Acrylic Extensions, Square Shape with design</p>
+      </article>
+      <article data-category="nails">
+        <a href="images/gallery/acrylic-russian-set-almond-shape.jpg"><img src="images/gallery/acrylic-russian-set-almond-shape.jpg" alt="Acrylic Russian Set with Almond Shape" loading="lazy"></a>
+        <p>Acrylic Russian Set with Almond Shape</p>
+      </article>
+      <article data-category="nails">
+        <a href="images/gallery/gel-russian-set-natural-nails.jpg"><img src="images/gallery/gel-russian-set-natural-nails.jpg" alt="Gel Russian Set, on natural nails" loading="lazy"></a>
+        <p>Gel Russian Set, on natural nails</p>
       </article>
     </section>
 
-    <section>
-      <article>
-        <img src="images/gallery/hairblowout.jpg" alt="Full colour, balayage finish">
+    <section class="gallery-group">
+      <article data-category="hair">
+        <a href="images/gallery/full-colour-balayage-finish.jpg"><img src="images/gallery/full-colour-balayage-finish.jpg" alt="Full colour, balayage finish" loading="lazy"></a>
         <p>Full Colour, balayage finish</p>
       </article>
-      <article>
-        <img src="images/gallery/washedhair.jpg" alt="Wash, cut and blow dry, everyday style">
+      <article data-category="hair">
+        <a href="images/gallery/wash-cut-blow-dry-everyday-style.jpg"><img src="images/gallery/wash-cut-blow-dry-everyday-style.jpg" alt="Wash, cut and blow dry, everyday style" loading="lazy"></a>
         <p>Wash, Cut &amp; Blow Dry, everyday style</p>
       </article>
-      <article>
-        <img src="images/gallery/braids.jpg" alt="Braiding, protective style">
+      <article data-category="hair">
+        <a href="images/gallery/protective-braids-style.jpg"><img src="images/gallery/protective-braids-style.jpg" alt="Braiding, protective style" loading="lazy"></a>
         <p>Braiding, protective style</p>
+      </article>
+      <article data-category="hair">
+        <a href="images/gallery/hair-blowout-with-curls.jpg"><img src="images/gallery/hair-blowout-with-curls.jpg" alt="Hair blowout with curls" loading="lazy"></a>
+        <p>Hair blowout with curls</p>
+      </article>
+      <article data-category="hair">
+        <a href="images/gallery/cornrow-protective-hairstyle.jpg"><img src="images/gallery/cornrow-protective-hairstyle.jpg" alt="Cornrow, protective hairstyle with either natural or fibre" loading="lazy"></a>
+        <p>Cornrow, protective hairstyle with either natural or fibre</p>
+      </article>
+      <article data-category="hair">
+        <a href="images/gallery/custom-hairstyle.jpg"><img src="images/gallery/custom-hairstyle.jpg" alt="Hairstyle of your own choice" loading="lazy"></a>
+        <p>Hairstyle of your own choice</p>
+      </article>
+      <article data-category="hair">
+        <a href="images/gallery/hair-highlights-dimension-and-depth.jpg"><img src="images/gallery/hair-highlights-dimension-and-depth.jpg" alt="Highlighting, to add dimension and depth to your hair" loading="lazy"></a>
+        <p>Highlighting, to add dimension and depth to your hair</p>
+      </article>
+    </section>
+
+    <!-- Shown by JavaScript when a search matches nothing -->
+    <section id="gallery-empty" hidden>
+      <article>
+        <p>No photos match your search. Try a different word, or clear the filters.</p>
       </article>
     </section>
 
