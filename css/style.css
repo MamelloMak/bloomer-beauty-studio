@@ -12,8 +12,7 @@
   --font-body: 'Lato', sans-serif;
 }
 
-/* reset: takes away the default spacing the browser adds, so I start from zero.
-   box-sizing makes padding and borders count inside the width of an element */
+
 * {
   margin: 0;
   padding: 0;
@@ -399,5 +398,338 @@ img {
     display: block;
     text-align: center;
     width: 100%;
+  }
+}
+
+/*PART 3 ADDITIONS */
+
+:root {
+  /* added two extra colours for Part 3 */
+  --colour-error: #b3261e;   /* error messages and invalid fields */
+  --colour-focus: #b5656d;   /* the darker rose already used for hover and focus in Part 2 */
+}
+
+
+/* GENERAL HELPERS */
+
+/* Makes the hidden attribute always win. Without this, the "main section"
+   rule (display: flex) would stop hidden sections from disappearing, and the
+   gallery filter and search controls depend on hiding things. */
+[hidden] {
+  display: none !important;
+}
+
+/* Keyboard users now see where they are on every button and button style link */
+button:focus-visible,
+.button-link:focus-visible {
+  outline: 2px solid var(--colour-focus);
+  outline-offset: 2px;
+}
+
+/* A button that is busy, for example while the enquiry form checks availability */
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+button:disabled:hover {
+  background-color: var(--colour-primary);
+  color: var(--colour-accent);
+}
+
+
+/* Form messages (enquiry and contact pages) */
+
+/* The error message under a field. The reserved height stops the form from jumping about when a message appears. */
+.field-error {
+  display: block;
+  min-height: 1.25em;
+  margin: 4px 0 10px;
+  color: var(--colour-error);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+/* A field that has failed validation. A box-shadow adds the thicker edge without making the field bigger. */
+input.is-invalid,
+select.is-invalid,
+textarea.is-invalid {
+  border-color: var(--colour-error);
+  box-shadow: 0 0 0 1px var(--colour-error);
+  background-color: #fff5f4;
+}
+
+input.is-invalid:focus,
+select.is-invalid:focus,
+textarea.is-invalid:focus {
+  outline: 2px solid var(--colour-error);
+}
+
+/* The response box shown after a form is sent. It uses the same pink left
+   border as the one used for the primary button. */
+.form-status {
+  margin-top: 20px;
+  padding: 20px;
+  border-left: 6px solid var(--colour-primary);
+  border-radius: 10px;
+  background-color: var(--colour-secondary);
+  color: var(--colour-accent);
+}
+
+.form-status:focus {
+  outline: 2px solid var(--colour-focus);
+}
+
+
+.form-status.is-problem {
+  border-left-color: var(--colour-error);
+}
+
+/*this is the email 
+preview */
+.email-preview {
+  margin-bottom: 10px;
+  padding: 15px;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  background-color: white;
+  font-family: var(--font-body);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* this is a button link styled like a button but is actually a link. 
+It is used for the "Book Your Appointment" link in the enquiry response. */
+.button-link {
+  margin-top: 10px;
+  font-weight: 650;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+
+/* below is the styling of theservices page: search, 
+filter and sort */
+
+/* display: contents lets the wrapper act as if it is not there, so the service sections 
+keep the layout they had in Part 2. */
+#services-list {
+  display: contents;
+}
+
+/* this is the control panel for the services page and the gallery page. 
+It is a white card with a soft shadow, like the articles and aside. */
+#services-controls,
+#gallery-controls {
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+#services-count,
+#gallery-count {
+  margin: 0;
+  font-weight: 700;
+}
+
+
+/* GALLERY PAGE */
+
+/*The gap of 20px comes from the "main section" rule. */
+.gallery-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+/* All photos are shown as squares so the rows look even. 
+The lightbox shows each photo uncropped. */
+.gallery-group article img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* Each photo is a link to the full image. */
+.gallery-group a {
+  display: block;
+  padding: 0;
+  border-radius: 9px;
+  background: none;
+  cursor: zoom-in;
+}
+
+.gallery-group a:hover,
+.gallery-group a:active {
+  background: none;
+}
+
+.gallery-group a:hover img {
+  opacity: 0.85;
+}
+
+.gallery-group a:focus-visible {
+  outline: 3px solid var(--colour-focus);
+  outline-offset: 3px;
+}
+
+/* The category buttons sit in a 
+wrapping row. */
+#gallery-controls [role="group"] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* for the filter buttons */
+.filter-btn {
+  width: auto;
+  margin-top: 0;
+}
+
+.filter-btn.active {
+  background-color: var(--colour-accent);
+  color: white;
+}
+
+
+/* LIGHTBOX (built by js/main.js,it only shows when open) */
+body.lightbox-open {
+  overflow: hidden;
+}
+
+.lightbox {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: rgba(30, 24, 28, 0.95);
+  color: white;
+}
+
+.lightbox[open] {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  justify-items: center;
+  animation: lightbox-fade 0.25s ease;
+}
+
+@keyframes lightbox-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightbox figure {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+  max-width: 100%;
+  text-align: center;
+}
+
+.lightbox img {
+  display: block;
+  max-width: 100%;
+  max-height: 75vh;
+  margin: 0 auto;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.lightbox figcaption {
+  margin-top: 15px;
+  padding: 0 15px;
+}
+
+/* Previous, next and close buttons. They are 44px so they are easy to tap. */
+.lightbox-prev,
+.lightbox-next,
+.lightbox-close {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-top: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
+
+.lightbox-prev {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0 8px;
+}
+
+.lightbox-next {
+  grid-column: 3;
+  grid-row: 1;
+  margin: 0 8px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover,
+.lightbox-close:hover {
+  background-color: var(--colour-primary);
+  color: var(--colour-accent);
+}
+
+.lightbox-prev:active,
+.lightbox-next:active,
+.lightbox-close:active {
+  transform: scale(0.92);
+}
+
+.lightbox-counter {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* phones, 600px and smaller: slimmer side buttons so the photo has more room */
+@media (max-width: 600px) {
+  .lightbox-prev,
+  .lightbox-next {
+    margin: 0 4px;
+    font-size: 1.5rem;
+  }
+
+  .lightbox img {
+    max-height: 65vh;
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .button-link,
+  .lightbox-prev,
+  .lightbox-next,
+  .lightbox-close {
+    transition: none;
+  }
+
+  .lightbox[open] {
+    animation: none;
   }
 }
