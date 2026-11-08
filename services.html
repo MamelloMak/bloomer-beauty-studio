@@ -8,6 +8,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <!--
+    jQuery 3.7.1 from the Google Hosted Libraries, used for the FAQ accordion.
+    defer lets the page keep loading while the script downloads. Deferred
+    scripts run in order, so jQuery is ready before js/main.js runs.
+  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
 </head>
 <body>
 
@@ -27,46 +33,127 @@
 
   <main>
     <!-- this is going to change for all the webpages -->
-    <section>
-      <article>
-        <h2>Lashes</h2>
-        <ul>
-          <li>Classic Lash Set, R650</li>
-          <li>Hybrid Lash Set, R850</li>
-          <li>Volume Lash Set, R1,100</li>
-          <li>Lash Lift &amp; Tint, R450</li>
-        </ul>
-      </article>
+
+    <!--
+      Search, filter and sort controls. They start hidden and js/main.js
+      shows them once the services have loaded, because they only work
+      with JavaScript.
+    -->
+    <section id="services-controls" hidden>
+      <form role="search" aria-label="Search and filter services" novalidate>
+        <label for="services-search">Search services</label>
+        <input type="search" id="services-search" name="search" placeholder="For example: gel, lash or braiding" autocomplete="off">
+
+        <label for="services-category">Category</label>
+        <select id="services-category" name="category">
+          <option value="all">All categories</option>
+          <option value="Lashes">Lashes</option>
+          <option value="Nails">Nails</option>
+          <option value="Hair">Hair</option>
+        </select>
+
+        <label for="services-sort">Sort by</label>
+        <select id="services-sort" name="sort">
+          <option value="default">Default order</option>
+          <option value="name">Name, A to Z</option>
+          <option value="price-low">Price, low to high</option>
+          <option value="price-high">Price, high to low</option>
+        </select>
+
+        <button type="button" id="services-clear">Clear filters</button>
+      </form>
+      <p id="services-count" role="status" aria-live="polite"></p>
     </section>
 
-    <section>
-      <article>
-        <h2>Nails</h2>
-        <ul>
-          <li>Classic Manicure, R180</li>
-          <li>Gel Manicure, R280</li>
-          <li>Gel Pedicure, R320</li>
-          <li>Acrylic Nail Extensions, R450</li>
-          <li>Nail Art, from R50 per nail</li>
-        </ul>
-      </article>
-    </section>
+    <!--
+      The services are written in the HTML so search engines and visitors
+      without JavaScript can read them. js/main.js replaces this content
+      with the version loaded from data/services.json, so the search,
+      filter and sort can work on it. display: contents in the CSS stops
+      this wrapper from changing the page layout.
+    -->
+    <div id="services-list">
+      <section>
+        <article>
+          <h2>Lashes</h2>
+          <ul>
+            <li>Classic Lash Set, R650</li>
+            <li>Hybrid Lash Set, R850</li>
+            <li>Volume Lash Set, R1,100</li>
+            <li>Lash Lift &amp; Tint, R450</li>
+          </ul>
+        </article>
+      </section>
 
-    <section>
+      <section>
+        <article>
+          <h2>Nails</h2>
+          <ul>
+            <li>Classic Manicure, R180</li>
+            <li>Gel Manicure, R280</li>
+            <li>Gel Pedicure, R320</li>
+            <li>Acrylic Nail Extensions, R450</li>
+            <li>Nail Art, from R50 per nail</li>
+          </ul>
+        </article>
+      </section>
+
+      <section>
+        <article>
+          <h2>Hair</h2>
+          <ul>
+            <li>Wash, Cut &amp; Blow Dry, R350</li>
+            <li>Full Colour, R650</li>
+            <li>Braiding, from R400</li>
+            <li>Treatment &amp; Deep Condition, R300</li>
+          </ul>
+        </article>
+      </section>
+    </div>
+
+    <!--
+      FAQ accordion. The questions and answers are written in the HTML so
+      search engines and visitors without JavaScript can read every answer.
+      When jQuery loads, js/main.js turns each question into a button and
+      hides the answers until the question is clicked.
+    -->
+    <section id="faq">
       <article>
-        <h2>Hair</h2>
-        <ul>
-          <li>Wash, Cut &amp; Blow Dry, R350</li>
-          <li>Full Colour, R650</li>
-          <li>Braiding, from R400</li>
-          <li>Treatment &amp; Deep Condition, R300</li>
-        </ul>
+        <h2>Frequently Asked Questions</h2>
+        <p>Select a question to see the answer.</p>
+
+        <div id="faq-accordion" class="accordion">
+          <h3 class="accordion-question">How do I book an appointment?</h3>
+          <div class="accordion-panel">
+            <p>Fill in the form on our <a href="enquiry.html">Enquiry page</a> with your details, the service you would like and your preferred date. You will see the price and opening hours straight away, and we reply within 24 hours to confirm your booking.</p>
+          </div>
+
+          <h3 class="accordion-question">What are your opening hours?</h3>
+          <div class="accordion-panel">
+            <p>We are open Monday to Friday from 09:00 to 18:00 and on Saturdays from 09:00 to 14:00. We are closed on Sundays.</p>
+          </div>
+
+          <h3 class="accordion-question">Where are your studios?</h3>
+          <div class="accordion-panel">
+            <p>Our Sandton Studio is at 12 Rivonia Road, Sandton, Johannesburg (011 234 5678). Our Rosebank Studio is at 45 Jan Smuts Avenue, Rosebank, Johannesburg (011 234 5679). You can find both on our <a href="contact.html">Contact page</a>.</p>
+          </div>
+
+          <h3 class="accordion-question">How much do your services cost?</h3>
+          <div class="accordion-panel">
+            <p>Most services cost between R180 and R1,100. Nail art is charged from R50 per nail and braiding starts from R400. The full price list is at the top of this page, and we confirm the final price for any service marked &ldquo;from&rdquo; when we reply to your enquiry.</p>
+          </div>
+
+          <h3 class="accordion-question">Can I change or cancel my booking?</h3>
+          <div class="accordion-panel">
+            <p>Yes. Send us a message through our <a href="contact.html">Contact page</a> or call us as early as you can, and we will help you find a new time.</p>
+          </div>
+        </div>
       </article>
     </section>
 
     <aside>
       <h2>Pricing Note</h2>
-      <p>Pricing is grounded in real 2026 Johannesburg salon rates: manicures R100-R450, pedicures R150-R470, gel nails R70-R470 and acrylic nails R100-R495, and lash extension sets typically R600-R1,500.</p>
+      <p>All the prices are subject to change, depending on the services and products used.</p>
     </aside>
   </main>
 
@@ -90,6 +177,7 @@
     </section>
   </footer>
 
-  <script src="js/main.js"></script>
+  <!-- defer keeps the run order: jQuery (in the head) first, then main.js -->
+  <script src="js/main.js" defer></script>
 </body>
 </html>
