@@ -390,7 +390,7 @@ async function initServicesPage() {
     }
     return copy;
   }
-l
+
   function buildCategory(categoryName, items) {
     const section = document.createElement("section");
     const article = document.createElement("article");
