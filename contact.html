@@ -7,7 +7,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
 </head>
 <body>
 
@@ -26,7 +28,6 @@
   </header>
 
   <main>
-    <!-- this is going to change for all the webpages -->
     <section>
       <article>
         <h2>Sandton Studio</h2>
@@ -47,16 +48,27 @@
     <section>
       <article>
         <h2>Find Us</h2>
-        <!-- Google Map embed for the Sandton studio goes here -->
-        <!-- Google Map embed for the Rosebank studio goes here -->
+                <p>Select a marker to see the address, phone number and directions for each studio.</p>
+
+        <div id="map-controls" hidden>
+          <button type="button" data-studio="both">Show both studios</button>
+          <button type="button" data-studio="sandton">Sandton Studio</button>
+          <button type="button" data-studio="rosebank">Rosebank Studio</button>
+        </div>
+
+        <div id="studio-map" role="region" aria-label="Map showing the Sandton Studio and the Rosebank Studio"></div>
+
+        <p>Prefer your own maps app? Get directions to
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=-26.1075,28.0560" target="_blank" rel="noopener noreferrer">Sandton Studio</a>
+          or
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=-26.1460,28.0435" target="_blank" rel="noopener noreferrer">Rosebank Studio</a>.
+        </p>
       </article>
     </section>
 
     <aside>
       <h2>Send Us a Message</h2>
-      <!--This form opens the user's email app with the email details filled in. 
-        POST sends the form data as plain text. novalidate allows JavaScript to show custom error 
-        messages when the user enters incorrect information.-->
+      
       <form id="contact-form" action="mailto:info@bloomerbeautystudio.co.za" method="post" enctype="text/plain" novalidate>
 
         <label for="contact-name">Name</label>
@@ -115,5 +127,6 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/map.js" defer></script>
 </body>
 </html>
