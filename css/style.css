@@ -224,7 +224,7 @@ footer img {
 
 /* hover is when the mouse is on top of something */
 nav a:hover {
-  color: #b5656d;
+  color: #8a3f47;
   text-decoration: underline;
 }
 
@@ -260,7 +260,7 @@ nav a:active {
 
 main a:active,
 button:active {
-  background-color: #b5656d;
+  background-color: #8a3f47;
   color: white;
 }
 
@@ -720,12 +720,221 @@ body.lightbox-open {
   }
 }
 
+/* CONTACT PAGE MAP (Leaflet, drawn by js/map.js) */
+
+/* The map needs a set height. z-index: 0 keeps Leaflet's own layers from
+   floating above anything else on the page. */
+#studio-map {
+  position: relative;
+  z-index: 0;
+  height: 420px;
+  border-radius: 10px;
+}
+
+/* The buttons above the map sit in a wrapping row. */
+#map-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+#map-controls button {
+  width: auto;
+  margin-top: 0;
+}
+
+/* The custom pin: a blush pink teardrop with a charcoal edge and dot */
+.studio-pin span {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 3px solid var(--colour-accent);
+  border-radius: 50% 50% 50% 0;
+  background-color: var(--colour-primary);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transform: rotate(-45deg);
+}
+
+.studio-pin span::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  border-radius: 50%;
+  background-color: var(--colour-accent);
+}
+
+/* Leaflet's default font is sans-serif, but I want it to match the rest of the site */
+.leaflet-container {
+  font-family: var(--font-body);
+}
+
+#studio-map img {
+  max-width: none;
+  border-radius: 0;
+}
+
+/* + and - zoom buttons */
+.leaflet-bar a {
+  padding: 0;
+  border-radius: 0;
+}
+
+.leaflet-bar a:hover,
+.leaflet-bar a:focus,
+.leaflet-bar a:active {
+  background-color: #f4f4f4;
+  color: var(--colour-accent);
+}
+
+.leaflet-control-attribution a {
+  display: inline;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+}
+
+.leaflet-control-attribution a:hover,
+.leaflet-control-attribution a:active {
+  background: none;
+  color: #0078a8;
+}
+
+/* popup will display when a pin is selected */
+.leaflet-popup-content h3 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.leaflet-popup-content p {
+  margin: 0 0 8px;
+}
+
+.leaflet-popup-close-button {
+  padding: 0;
+}
+
+.leaflet-popup-content a {
+  display: inline;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--colour-accent);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.leaflet-popup-content a:hover,
+.leaflet-popup-content a:active {
+  background: none;
+  color: #8a3f47;
+}
+
+/* link for directions */
+.leaflet-popup-content a.directions-link {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 5px;
+  background-color: var(--colour-primary);
+  color: var(--colour-accent);
+  text-decoration: none;
+}
+
+.leaflet-popup-content a.directions-link:hover,
+.leaflet-popup-content a.directions-link:active {
+  background-color: var(--colour-accent);
+  color: white;
+}
+
+/* a slightly shorter map on small screens */
+@media (max-width: 480px) {
+  #studio-map {
+    height: 340px;
+  }
+}
+
+/* FAQ ACCORDION style for services page, built with jQuery in js/main.js */
+
+/* The question headings. JavaScript puts a button inside each one. */
+.accordion-question {
+  margin-bottom: 0;
+}
+
+/* Each question looks like a full width bar. The general button rules would
+   centre the text and, on phones, force a block layout, so those are
+   overridden here. */
+.accordion-trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  margin-top: 10px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  background-color: var(--colour-secondary);
+  color: var(--colour-accent);
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  text-align: left;
+}
+
+/* Hover, focus, an open question and the pressed state all use the blush
+   pink with charcoal text, which keeps the contrast high. */
+.accordion-trigger:hover,
+.accordion-trigger:active,
+.accordion-trigger[aria-expanded="true"] {
+  background-color: var(--colour-primary);
+  color: var(--colour-accent);
+}
+
+
+.accordion-trigger::after {
+  content: "";
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.25s ease;
+}
+
+.accordion-trigger[aria-expanded="true"]::after {
+  transform: rotate(-135deg);
+}
+
+.accordion-panel {
+  padding: 15px 20px 5px;
+}
+
+/* Links inside answers read as normal underlined text, not as pink buttons */
+.accordion-panel a {
+  display: inline;
+  padding: 0;
+  background: none;
+  color: var(--colour-accent);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.accordion-panel a:hover,
+.accordion-panel a:active {
+  background: none;
+  color: #8a3f47;
+}
 
 @media (prefers-reduced-motion: reduce) {
   .button-link,
   .lightbox-prev,
   .lightbox-next,
-  .lightbox-close {
+  .lightbox-close,
+  .accordion-trigger::after {
     transition: none;
   }
 
