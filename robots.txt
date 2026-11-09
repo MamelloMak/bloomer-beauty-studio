@@ -1,0 +1,12 @@
+# Bloomer Beauty Studio: instructions for search engine crawlers
+
+# Allow every crawler to visit the public website
+User-agent: *
+Allow: /
+
+# The data folder only holds the service prices that the website reads,
+# so it does not need to appear in search results
+Disallow: /data/
+
+# Where to find the list of pages
+Sitemap: https://mamellomak.github.io/bloomer-beauty-studio/sitemap.xml
