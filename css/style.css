@@ -942,3 +942,37 @@ body.lightbox-open {
     animation: none;
   }
 }
+
+/* PART 3: HEADINGS FOR SEO
+   The studio name in the header used to be the h1 on every page. For search
+   engines, each page needs one h1 of its own, so the studio name is now a
+   paragraph that is styled to look exactly like the old h1. */
+.site-name {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  margin-bottom: 11px;
+}
+
+/* The page h1 keeps the size the first h2 on each page used to have */
+main h1 {
+  font-size: 1.75rem;
+}
+
+/* the screen size will remain the same as the rest of the website size */
+@media (max-width: 1024px) {
+  .site-name { font-size: 2.2rem; }
+  main h1 { font-size: 1.6rem; }
+}
+
+@media (max-width: 768px) {
+  .site-name { font-size: 2rem; }
+  main h1 { font-size: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  .site-name { font-size: 1.75rem; }
+  main h1 { font-size: 1.4rem; }
+}

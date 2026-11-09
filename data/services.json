@@ -1,0 +1,17 @@
+[
+  { "category": "Lashes", "name": "Classic Lash Set", "price": 650, "from": false, "unit": "" },
+  { "category": "Lashes", "name": "Hybrid Lash Set", "price": 850, "from": false, "unit": "" },
+  { "category": "Lashes", "name": "Volume Lash Set", "price": 1100, "from": false, "unit": "" },
+  { "category": "Lashes", "name": "Lash Lift & Tint", "price": 450, "from": false, "unit": "" },
+
+  { "category": "Nails", "name": "Classic Manicure", "price": 180, "from": false, "unit": "" },
+  { "category": "Nails", "name": "Gel Manicure", "price": 280, "from": false, "unit": "" },
+  { "category": "Nails", "name": "Gel Pedicure", "price": 320, "from": false, "unit": "" },
+  { "category": "Nails", "name": "Acrylic Nail Extensions", "price": 450, "from": false, "unit": "" },
+  { "category": "Nails", "name": "Nail Art", "price": 50, "from": true, "unit": "per nail" },
+
+  { "category": "Hair", "name": "Wash, Cut & Blow Dry", "price": 350, "from": false, "unit": "" },
+  { "category": "Hair", "name": "Full Colour", "price": 650, "from": false, "unit": "" },
+  { "category": "Hair", "name": "Braiding", "price": 400, "from": true, "unit": "" },
+  { "category": "Hair", "name": "Treatment & Deep Condition", "price": 300, "from": false, "unit": "" }
+]
