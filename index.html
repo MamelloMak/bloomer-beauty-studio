@@ -3,19 +3,113 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bloomer | Home</title>
-  <meta name="description" content="Bloomer is a beauty studio in Johannesburg offering lash, nail and hair services.">
+  <title>Bloomer | Lash, Nail &amp; Hair Studio in Sandton and Rosebank</title>
+  <meta name="description" content="Bloomer is a beauty studio in Sandton and Rosebank, Johannesburg, offering lash extensions, gel and acrylic nails, hair colour and braiding. Book online.">
+  <meta name="keywords" content="beauty studio Johannesburg, lash extensions Sandton, gel nails Rosebank, acrylic nails Johannesburg, hair braiding Johannesburg, nail art, lash lift and tint, Bloomer">
+  <meta name="author" content="Mamello Makhalemele">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mamellomak.github.io/bloomer-beauty-studio/">
+  <link rel="icon" type="image/png" href="images/logo.png">
+
+  <!-- open graph tags, these control how the page looks when someone shares the link on social media -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bloomer Beauty Studio">
+  <meta property="og:title" content="Bloomer | Lash, Nail &amp; Hair Studio in Sandton and Rosebank">
+  <meta property="og:description" content="Bloomer is a beauty studio in Sandton and Rosebank, Johannesburg, offering lash extensions, gel and acrylic nails, hair colour and braiding. Book online.">
+  <meta property="og:url" content="https://mamellomak.github.io/bloomer-beauty-studio/">
+  <meta property="og:image" content="https://mamellomak.github.io/bloomer-beauty-studio/images/hero/salonherobanner.jpg">
+  <meta property="og:image:alt" content="The inside of the Bloomer beauty studio">
+  <meta property="og:locale" content="en_ZA">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BeautySalon",
+      "@id": "https://mamellomak.github.io/bloomer-beauty-studio/#sandton",
+      "name": "Bloomer Beauty Studio, Sandton",
+      "url": "https://mamellomak.github.io/bloomer-beauty-studio/",
+      "image": "https://mamellomak.github.io/bloomer-beauty-studio/images/hero/salonherobanner.jpg",
+      "telephone": "+27112345678",
+      "email": "info@bloomerbeautystudio.co.za",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "12 Rivonia Road",
+        "addressLocality": "Sandton",
+        "addressRegion": "Gauteng",
+        "addressCountry": "ZA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -26.1075,
+        "longitude": 28.056
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "14:00"
+        }
+      ]
+    },
+    {
+      "@type": "BeautySalon",
+      "@id": "https://mamellomak.github.io/bloomer-beauty-studio/#rosebank",
+      "name": "Bloomer Beauty Studio, Rosebank",
+      "url": "https://mamellomak.github.io/bloomer-beauty-studio/",
+      "image": "https://mamellomak.github.io/bloomer-beauty-studio/images/hero/salonherobanner.jpg",
+      "telephone": "+27112345679",
+      "email": "info@bloomerbeautystudio.co.za",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "45 Jan Smuts Avenue",
+        "addressLocality": "Rosebank",
+        "addressRegion": "Gauteng",
+        "addressCountry": "ZA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -26.146,
+        "longitude": 28.0435
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "14:00"
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
+
+
 <body>
 
   <header>
     <!-- remains the same for all the webpages -->
     <img src="images/logo.png" alt="Bloomer logo">
-    <h1>Bloomer</h1>
+    <p class="site-name">Bloomer</p>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -31,7 +125,7 @@
     <section>
       <article>
         <img src="images/hero/salonherobanner.jpg" alt="Bloomer studio interior">
-        <h2>Beauty, Your Way</h2>
+        <h1>Beauty, Your Way</h1>
         <p>Bloomer is a beauty studio that offers lash, nail, and hair services. It is located in Johannesburg. Every treatment is done with care, and we use only high-quality products and techniques specially tailored to our clients. We offer a relaxed and welcoming atmosphere.</p>
         <!-- call to action -->
         <p><a href="enquiry.html">Book Your Appointment</a></p>
@@ -42,14 +136,17 @@
       <article>
         <h2>Lashes</h2>
         <p>Classic, hybrid and volume lash extensions, plus lash lifts and tints.</p>
+        <p><a href="services.html">View lash services and prices</a></p>
       </article>
       <article>
         <h2>Nails</h2>
         <p>Manicures, pedicures, gel and acrylic nails, including nail art.</p>
+        <p><a href="services.html">View nail services and prices</a></p>
       </article>
       <article>
         <h2>Hair</h2>
         <p>Cuts, colour, blow dry, braiding and deep conditioning treatments.</p>
+        <p><a href="services.html">View hair services and prices</a></p>
       </article>
     </section>
 
@@ -60,6 +157,7 @@
         <li>Qualified therapists</li>
         <li>Easy online booking</li>
       </ul>
+      <p><a href="gallery.html">See our work in the gallery</a></p>
     </aside>
   </main>
 
